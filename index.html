@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Converter</title>
+    <link rel="shortcut icon" href="pic/triangle.png" type="image/x-icon" />
+    <!-- frame ork link -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.6.3/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <section class="flex flex-col-reverse md:flex-row container mx-auto my-4">
+      <!-- card all  -->
+      <div class="flex-1 gap-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <!-- fast card  -->
+        <div class="card w-[100%] bg-base-100 shadow-xl">
+          <figure>
+            <img class="object-cover" src="pic/triangle.png" alt="Triangle " />
+          </figure>
+          <div class="card-body text-center">
+            <h2 class="card-title flex items-center justify-center">
+              Triangle
+            </h2>
+            <span>Area(A)=0.5 *b*h</span>
+            <div class="flex gap-3 justify-between">
+              <input
+                id="triangle_width"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="b"
+              /><span>cm</span>
+              <input
+                id="triangle_height"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="h"
+              /><span>cm</span>
+            </div>
+            <div class="card-actions">
+              <button onclick="triangleClick()" class="btn btn-primary w-full">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- scend card  -->
+        <div class="card w-[100%] bg-base-100 shadow-xl">
+          <figure>
+            <img class="object-cover" src="pic/rectangle.png" alt="Shoes" />
+          </figure>
+          <div class="card-body text-center">
+            <h2 class="card-title flex items-center justify-center">
+              Rectangle
+            </h2>
+            <span>Area (A) = w*l</span>
+            <div class="flex gap-3 justify-between">
+              <input
+                id="rectangle_width"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="b"
+              /><span>cm</span>
+              <input
+                id="rectangle_height"
+                class="w-20 bg-blue-100 text-red-500"
+                min="0"
+                type="number"
+                placeholder="h"
+              /><span>cm</span>
+            </div>
+            <div class="card-actions">
+              <button
+                onclick="rectangle()"
+                id="btn-rectangle"
+                class="btn btn-primary w-full"
+              >
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- thar card  -->
+        <div class="card w-[100%] bg-base-100 shadow-xl">
+          <figure class="p-5">
+            <img src="pic/parallelogram.png" alt="Shoes" />
+          </figure>
+          <div class="card-body text-center">
+            <h2 class="card-title flex items-center justify-center">
+              Parallelogram
+            </h2>
+            <span>Area (A) = b * h</span>
+            <div class="flex gap-3 justify-between">
+              <input
+                id="parallelogram_width"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="b"
+              /><span>cm</span>
+              <input
+                id="parallelogram_height"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="h"
+              /><span>cm</span>
+            </div>
+            <div class="card-actions">
+              <button onclick="parallelogram()" class="btn btn-primary w-full">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- four card  -->
+        <div class="card w-[100%] bg-base-100 shadow-xl">
+          <figure class="p-5">
+            <img src="pic/rhombus.png" alt="Shoes" />
+          </figure>
+          <div class="card-body text-center">
+            <h2 class="card-title flex items-center justify-center">Rhombus</h2>
+            <span>Area (A)=0.5*d<sub>1</sub>*d<sub>2</sub></span>
+            <div class="flex gap-3 justify-between">
+              <input
+                id="rhombus_width"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="b"
+              /><span>cm</span>
+              <input
+                id="rhombus_height"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="h"
+              /><span>cm</span>
+            </div>
+            <div class="card-actions">
+              <button onclick="rhombus()" class="btn btn-primary w-full">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- five card  -->
+        <div class="card w-[100%] bg-base-100 shadow-xl">
+          <figure class="p-5">
+            <img src="pic/pentagon.png" alt="Shoes" />
+          </figure>
+          <div class="card-body text-center">
+            <h2 class="card-title flex items-center justify-center">
+              Pentagon
+            </h2>
+            <span>Area (A) =0.5* p * b</span>
+            <div class="flex gap-3 justify-between">
+              <input
+                id="pentagon_width"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="b"
+              /><span>cm</span>
+              <input
+                id="pentagon_height"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="h"
+              /><span>cm</span>
+            </div>
+            <div class="card-actions">
+              <button onclick="pentagon()" class="btn btn-primary w-full">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+        <!-- six card  -->
+        <div class="card w-[100%] bg-base-100 shadow-xl">
+          <figure class="p-5">
+            <img src="pic/ellipse.png" alt="ellipse" />
+          </figure>
+          <div class="card-body text-center">
+            <h2 class="card-title flex items-center justify-center">Ellipse</h2>
+            <span>Area (A) =3.1416* a * b</span>
+            <div class="flex gap-3 justify-between">
+              <input
+                id="ellipse_width"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="a"
+              /><span>cm</span>
+              <input
+                id="ellipse_height"
+                class="w-20 bg-blue-100 text-red-500"
+                type="number"
+                min="0"
+                placeholder="h"
+              /><span>cm</span>
+            </div>
+            <div class="card-actions mt-6">
+              <button onclick="ellipse()" class="btn btn-primary w-full">
+                Calculate
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- calculate total -->
+      <div
+        class="w-full backdrop-blur-sm md:w-52 lg:w-80 sticky top-1 md:static text-center border border-solid border-red-700 mx-auto md:mx-6"
+      >
+        <h3 class="text-4xl text-yellow-500 my-5 font-bold">Calculate Total</h3>
+        <p
+          class="text-xl md:text-3xl text-red-700 font-extrabold"
+          id="calculate"
+        >
+          0 cm
+        </p>
+      </div>
+      <script src="script/Triangle.js"></script>
+      <script src="script/rectangle.js"></script>
+      <script src="script/Parallelogram.js"></script>
+      <script src="script/rhombus.js"></script>
+    </section>
+  </body>
+</html>
